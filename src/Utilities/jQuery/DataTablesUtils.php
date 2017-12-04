@@ -1,6 +1,6 @@
 <?php
 
-namespace Ideo\Utilities;
+namespace Ideo\Utilities\jQuery;
 
 /**
  * DataTables のリクエストを扱う際に便利なコンビニエンスメソッドを提供します。
