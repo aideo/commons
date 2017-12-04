@@ -1,6 +1,6 @@
 {
   "name": "ideo/commons",
-  "description": "Commons library.",
+  "description": "Provides reusable components with small granularity.",
   "type": "library",
   "license": "Apache-2.0",
   "authors": [
@@ -12,10 +12,15 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
+    "ext-mbstring": "*",
     "nesbot/carbon": "^1.2",
     "php": ">=5.6.4"
   },
   "require-dev": {
+    "ext-xml": "*",
+    "ext-zip": "*",
+    "phpoffice/phpexcel": "^1.8",
+    "phpoffice/phpspreadsheet": "^1.0.0",
     "phpunit/phpunit": "^5.0|^6.0"
   },
   "autoload": {
@@ -27,5 +32,17 @@
     "psr-4": {
       "Ideo\\": "tests"
     }
+  },
+  "suggest": {
+    "phpoffice/phpexcel": "If you use a feature for PHPExcel (^1.8).",
+    "phpoffice/phpspreadsheet": "If you use a feature for PhpSpreadsheet (^1.0.0)."
+  },
+  "scripts": {
+    "test": [
+      "php vendor/bin/phpunit"
+    ],
+    "test-quiet": [
+      "php vendor/bin/phpunit -d error_reporting=0"
+    ]
   }
 }
