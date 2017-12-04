@@ -33,6 +33,15 @@ class StringUtilsTest extends TestCase
         $this->assertFalse(StringUtils::isNotBlank(' '));
     }
 
+    public function testNormalizeJapanese()
+    {
+        $this->assertEquals(StringUtils::normalizeJapanese('ｱｲｳｴｵ'), 'アイウエオ');
+        $this->assertEquals(StringUtils::normalizeJapanese('   ｱｲｳｴｵ １２３４５６７８９０  '), 'アイウエオ 1234567890');
+        $this->assertEquals(StringUtils::normalizeJapanese('１２３４５６７８９０'), '1234567890');
+        $this->assertEquals(StringUtils::normalizeJapanese('　テスト　'), 'テスト');
+        $this->assertEquals(StringUtils::normalizeJapanese('　テスト　テスト　'), 'テスト テスト');
+    }
+
     public function testLength()
     {
         $this->assertEquals(StringUtils::length('Hello !!'), 8);

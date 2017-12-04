@@ -112,7 +112,7 @@ class StringUtils
      *
      * @return string
      */
-    public static function normalize($text, $encoding = self::DEFAULT_ENCODING)
+    public static function normalizeJapanese($text, $encoding = self::DEFAULT_ENCODING)
     {
         $text = mb_convert_kana($text, 'asKV', $encoding);
         $text = self::trim($text);
