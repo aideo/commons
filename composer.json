@@ -20,7 +20,6 @@
     "ext-xml": "*",
     "ext-zip": "*",
     "phpoffice/phpexcel": "^1.8",
-    "phpoffice/phpspreadsheet": "^1.0.0",
     "phpunit/phpunit": "^4.8|^5.7"
   },
   "autoload": {
@@ -35,7 +34,7 @@
   },
   "suggest": {
     "phpoffice/phpexcel": "If you use a feature for PHPExcel (^1.8).",
-    "phpoffice/phpspreadsheet": "If you use a feature for PhpSpreadsheet (^1.0.0)."
+    "ideo/commons-phpspreadsheet": "If you use a feature for PhpSpreadsheet (^0.1)."
   },
   "scripts": {
     "test": [
