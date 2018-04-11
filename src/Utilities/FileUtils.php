@@ -2,6 +2,10 @@
 
 namespace Ideo\Utilities;
 
+define('IDEO_UTILITIES_FILEUTILS_GB_SIZE', 1024 * 1024 * 1024);
+define('IDEO_UTILITIES_FILEUTILS_MB_SIZE', 1024 * 1024);
+define('IDEO_UTILITIES_FILEUTILS_KB_SIZE', 1024);
+
 /**
  * ファイルに関するコンビニエンスメソッドを提供します。
  *
@@ -15,21 +19,21 @@ class FileUtils
      *
      * @var int
      */
-    const GB_SIZE = 1024 * 1024 * 1024;
+    const GB_SIZE = IDEO_UTILITIES_FILEUTILS_GB_SIZE;
 
     /**
      * KB のバイト数を表します。
      *
      * @var int
      */
-    const KB_SIZE = 1024;
+    const KB_SIZE = IDEO_UTILITIES_FILEUTILS_KB_SIZE;
 
     /**
      * MB のバイト数を表します。
      *
      * @var int
      */
-    const MB_SIZE = 1024 * 1024;
+    const MB_SIZE = IDEO_UTILITIES_FILEUTILS_MB_SIZE;
 
     /**
      * ファイル名の拡張子を変更して取得します。

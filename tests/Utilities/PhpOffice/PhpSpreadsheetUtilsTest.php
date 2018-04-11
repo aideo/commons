@@ -26,7 +26,7 @@ class PhpSpreadsheetUtilsTest extends TestCase
         $this->assertEquals(PhpSpreadsheetUtils::getCellValue($sh, 4, 4), "1/1/2017 0:01");
         $this->assertEquals(PhpSpreadsheetUtils::getCellValue($sh, 4, 5), 10000);
 
-        $this->assertEquals(PhpSpreadsheetUtils::getCellValue($sh, 4, 3), date('m/j/Y G:i'));
+        $this->assertEquals(PhpSpreadsheetUtils::getCellValue($sh, 4, 3), date('n/j/Y G:i'));
     }
 
     /**

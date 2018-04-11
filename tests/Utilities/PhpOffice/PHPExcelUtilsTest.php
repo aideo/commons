@@ -28,7 +28,7 @@ class PHPExcelUtilsTest extends TestCase
         $this->assertEquals(PHPExcelUtils::getCellValue($sh, 3, 4), "1/1/17 0:01");
         $this->assertEquals(PHPExcelUtils::getCellValue($sh, 3, 5), 10000);
 
-        $this->assertEquals(PHPExcelUtils::getCellValue($sh, 3, 3), date('m/j/y G:i'));
+        $this->assertEquals(PHPExcelUtils::getCellValue($sh, 3, 3), date('n/j/y G:i'));
     }
 
     /**
