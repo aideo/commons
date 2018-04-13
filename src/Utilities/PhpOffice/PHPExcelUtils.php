@@ -27,9 +27,9 @@ class PHPExcelUtils
      */
     const OPT_UNESCAPED = 2;
 
-    private static $escapedStringFrom = [];
+    public static $escapedStringFrom = [];
 
-    private static $escapedStringTo = [];
+    public static $escapedStringTo = [];
 
     private static $initializedEscapedString = false;
 
@@ -134,15 +134,17 @@ class PHPExcelUtils
     private static function initializeEscapedString()
     {
         if (self::$initializedEscapedString === false) {
-            for ($i = 0; $i <= 31; ++$i) {
-                if ($i != 9 && $i != 10 && $i != 13) {
-                    $key = sprintf('_x%04s_', strtoupper(dechex($i)));
-                    $value = chr($i);
+            self::$escapedStringFrom[] = '_x000D_';
+            self::$escapedStringTo[] = chr(0x000D);
 
-                    self::$escapedStringFrom[] = $key;
-                    self::$escapedStringTo[] = $value;
-                }
-            }
+            self::$escapedStringFrom[] = '_x000A_';
+            self::$escapedStringTo[] = chr(0x000A);
+
+            self::$escapedStringFrom[] = '_x0009_';
+            self::$escapedStringTo[] = chr(0x0009);
+
+            self::$escapedStringFrom[] = '_x005f_';
+            self::$escapedStringTo[] = chr(0x005f);
         }
     }
 
@@ -195,7 +197,7 @@ class PHPExcelUtils
     {
         self::initializeEscapedString();
 
-        return str_replace(self::$escapedStringTo, self::$escapedStringFrom, $s);
+        return str_replace(self::$escapedStringFrom, self::$escapedStringTo, $s);
     }
 
     /**

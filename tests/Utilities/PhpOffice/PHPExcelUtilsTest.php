@@ -29,6 +29,8 @@ class PHPExcelUtilsTest extends TestCase
         $this->assertEquals(PHPExcelUtils::getCellValue($sh, 3, 5), 10000);
 
         $this->assertEquals(PHPExcelUtils::getCellValue($sh, 3, 3), date('n/j/y G:i'));
+
+        $this->assertEquals(PHPExcelUtils::unescapedString('_x000D_'), chr(0x000D));
     }
 
     /**
